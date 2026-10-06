@@ -41,7 +41,7 @@ Este proyecto analiza la evolución de la industria manufacturera argentina entr
 ## Herramientas utilizadas
 
 - Google Sheets / Excel / CSV
-- Python (pandas, matplotlib) — opcional
+- Python (numpy, pandas, matplotlib)
 - Power BI (visualización, Sprint 3)
 - Google Drive, Trello, GitHub, Google Meet
 
@@ -65,9 +65,12 @@ Este proyecto analiza la evolución de la industria manufacturera argentina entr
 ## Resultados principales
 
 En desarrollo. Primeras observaciones del EDA inicial:
-- El dataset tiene 127 meses consecutivos, sin valores faltantes ni fechas duplicadas.
-- Los valores atípicos se concentran en marzo-mayo de 2020 (pandemia) y corresponden a hechos reales.
-- La producción tiene una estacionalidad marcada (enero y febrero más bajos), por lo que se comparan períodos equivalentes.
+- El dataset contiene 127 registros mensuales entre enero de 2016 y julio de 2026.
+- No se encontraron valores nulos ni registros duplicados.
+- Las variables presentan diferentes rangos, niveles de dispersión y formas de distribución según la rama industrial.
+- Se identificaron valores potencialmente atípicos en algunas variables, que no necesariamente representan errores.
+- El ipi_general presenta fluctuaciones a lo largo del período, con una caída marcada en 2020 y niveles más bajos desde 2024.
+- Las distintas ramas industriales muestran comportamientos diferentes, aspecto que puede profundizarse en el Sprint 2.
 
 ---
 
