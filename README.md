@@ -1,99 +1,110 @@
-# Transformación de la industria manufacturera en Argentina (2016 - 2026)
+# Industria manufacturera argentina 2022–2025, ¿recuperación o rebote?
 
-Proyecto de Prácticas Profesionalizantes I — 2.º cuatrimestre 2026 — Equipo 1.
+**Inteligencia de Datos para la Reconfiguración Industrial Argentina**
+Proyecto de Prácticas Profesionalizantes I — 2.º cuatrimestre 2026 — Politécnico Malvinas Argentinas — Equipo 1.
 
-## Integrantes del equipo
-- Delia Torres — Comunicadora del equipo / Documentadora
-- Fátima Albornoz — Analista de datos
-- Vanina Chávez — Diseñadora de visualizaciones / Documentadora
-- Tomás Roa — Coordinador de recursos
+## Integrantes y roles (Sprint 3)
 
-Responsable de calidad de datos: todo el equipo.
+- Fátima Albornoz — Comunicadora del equipo
+- Vanina Chávez — Analista de datos
+- Delia Torres — Documentadora y encargada de la entrega
+- Tomás Roa — Responsable de calidad de datos y seguimiento del Trello
 
----
-
-## Descripción del proyecto
-
-Este proyecto analiza la evolución de la industria manufacturera argentina entre enero de 2016 y julio de 2026 a partir del Índice de Producción Industrial manufacturero (IPI) del INDEC. Se busca describir cómo cambió la producción en ese período y qué diferencias se observan entre las distintas ramas de actividad, dentro de la línea de trabajo "Reconfiguración de la industria argentina" propuesta por la cátedra.
+Diseño de visualizaciones, coordinación de recursos y entrega final se asumen en conjunto.
 
 ---
 
-## Fuente de datos
+## Pregunta del proyecto
 
-- **Fuente:** INDEC — Índice de Producción Industrial manufacturero (IPI), base 2004 = 100. Obtenido de la API de Series de Tiempo de datos.gob.ar (dataset 453).
-- **Tipo de datos:** indicadores económicos, series de tiempo mensuales.
-- **Dataset:** `data/raw/ipi_manufacturero_indec_2016_2026.csv` — 127 registros (enero 2016 a julio 2026) y 20 variables: fecha, IPI general (serie original, desestacionalizada y tendencia-ciclo) y 16 ramas manufactureras.
+En 2025 la industria manufacturera argentina volvió a crecer después de la caída de 2023–2024. ¿Se recuperó realmente o solo dejó de caer?
+
+Período de estudio 2022–2025. Se toma 2022 como año de referencia porque es el último año completo antes de la contracción y ya sin el efecto de la pandemia.
+
+Preguntas de análisis
+1. ¿La producción manufacturera recuperó en 2025 los niveles de 2022?
+2. ¿Cómo evolucionaron las distintas ramas manufactureras?
+3. ¿La recuperación productiva estuvo acompañada por el empleo industrial y cómo evolucionó el comercio exterior?
 
 ---
 
-## Objetivos del análisis
+## Fuentes de datos
 
-**Objetivo general**
-- Describir la evolución de la industria manufacturera argentina entre 2016 y julio de 2026 y las diferencias entre sus ramas.
+- **INDEC** — Índice de Producción Industrial manufacturero (IPI), general y por ramas, serie original y desestacionalizada.
+- **SIPA** — Empleo industrial registrado (asalariados de la industria manufacturera).
+- **INDEC, Intercambio Comercial Argentino (ICA)** — Importaciones por uso económico y exportaciones por grandes rubros.
+- **INDEC** — Índice de cantidades exportadas de manufacturas de origen industrial (anual).
 
-**Objetivos específicos**
-- Identificar períodos de expansión y contracción de la actividad.
-- Comparar el comportamiento de las distintas ramas manufactureras.
-- Identificar las ramas con mayores crecimientos y contracciones.
+Los datos de 2025 son provisorios.
+
+## Datasets
+
+| Archivo | Contenido |
+|---|---|
+| `data/processed/dataset_unificado.csv` | 126 meses (ene-2016 a jun-2026) y 33 variables: IPI general y por rama, empleo industrial e intercambio comercial |
+| `data/processed/exportaciones_MOI_cantidades_anual_2022_2025.csv` | Índice anual de cantidades exportadas de manufacturas de origen industrial |
+| `data/raw/` | Datos originales descargados de cada fuente |
+
+El tablero de Power BI lee los dos CSV directamente desde este repositorio, así que se puede abrir y actualizar en cualquier computadora sin cambiar rutas.
 
 ---
 
 ## Herramientas utilizadas
 
-- Google Sheets / Excel / CSV
-- Python (pandas, matplotlib) — opcional
-- Power BI (visualización, Sprint 3)
-- Google Drive, Trello, GitHub, Google Meet
+- Python (pandas) para la limpieza y unión de los datos
+- Power BI para el análisis y el tablero interactivo
+- Canva para la presentación
+- Google Drive, Trello, diagrama de Gantt, GitHub, Google Meet y WhatsApp para la organización del equipo
 
 ---
 
-## Proceso de análisis
+## Proceso de trabajo
 
-**Sprint 1 — Planificación y análisis inicial (28/09/2026 al 04/10/2026)**
-- Organización del equipo, roles y diagrama de Gantt.
-- Ficha de conocimiento del dominio.
-- Diccionario de datos.
-- Análisis exploratorio inicial (EDA).
-- Formulación de 10 preguntas de análisis y selección de 3.
+**Sprint 1 — Planificación y análisis inicial (28/09 al 04/10)**
+Organización del equipo, roles, Gantt, ficha de conocimiento del dominio, diccionario de datos, análisis exploratorio inicial y selección de preguntas.
 
-**Próximos sprints**
-- Sprint 2: limpieza, transformación, patrones e insights.
-- Sprint 3: visualización, narrativa con datos y presentación final.
+**Sprint 2 — Preparación y análisis (05/10 al 25/10)**
+Limpieza y unión de los datasets de IPI, empleo e intercambio comercial, cálculo de variaciones e índices base 2022, primeras visualizaciones e insights.
+
+**Sprint 3 — Visualización y narrativa (26/10 al 01/11)**
+Tablero final en Power BI, presentación en Canva, guion de la exposición, selección de insights, informe técnico y video de la exposición.
 
 ---
 
 ## Resultados principales
 
-En desarrollo. Primeras observaciones del EDA inicial:
-- El dataset tiene 127 meses consecutivos, sin valores faltantes ni fechas duplicadas.
-- Los valores atípicos se concentran en marzo-mayo de 2020 (pandemia) y corresponden a hechos reales.
-- La producción tiene una estacionalidad marcada (enero y febrero más bajos), por lo que se comparan períodos equivalentes.
+- **La recuperación fue parcial.** La producción cayó 11,5 % entre 2022 y 2024. En 2025 creció 1,9 %, pero quedó 9,8 % por debajo de 2022 (IPI desestacionalizado, promedios anuales).
+- **La recuperación fue desigual entre ramas.** 12 de las 16 ramas crecieron entre 2024 y 2025, pero solo 2 superaron sus niveles de 2022 (otro equipo de transporte y refinación del petróleo).
+- **El empleo no acompañó.** El empleo industrial bajó 1,8 % en 2025 frente a 2024 y quedó apenas por debajo de 2022.
+- **El comercio exterior también fue desigual.** Las importaciones de bienes de consumo y de capital subieron más de 50 % en 2025, mientras que los bienes intermedios siguen 19 % por debajo de 2022. En exportaciones, combustibles y energía quedó 30,5 % por encima de 2022 y las manufacturas de origen industrial apenas 1,5 %.
 
 ---
 
 ## Visualizaciones
 
-Se incorporarán a medida que avance el análisis (carpeta `analysis/`).
+Tablero de Power BI en `reports/PowerBI/` (versión final `PP1-S2-Visualizaciones_Generales_V8.pbix`):
+- Portada y preguntas, con navegación por botones
+- P1 · Evolución de la producción
+- P2 · Recuperación por rama
+- P3 · Producción, empleo y comercio
+- P3 · Comercio por rubros
+- P3 · Exportaciones, valor y cantidad
+
+Las versiones anteriores (V1 a V7) quedan como respaldo en la misma carpeta y en el Drive del equipo.
 
 ---
 
-## Conclusiones
+## Conclusión
 
-Se completarán al cierre del proyecto.
+El crecimiento de 2025 no alcanza para hablar de recuperación. Mirando desde 2022, la industria todavía no recuperó lo que perdió, la mejora se concentró en pocas ramas y el empleo no la acompañó. Un único porcentaje de crecimiento no muestra estas diferencias, por eso importa con qué año se compara y qué pasa dentro de cada indicador.
 
 ---
 
 ## Archivos del proyecto
 
 - `data/raw/` → datos originales
-- `data/processed/` → datos preparados o transformados (Sprint 2)
-- `analysis/` → archivos de análisis (notebooks, .pbix, consultas)
-- `docs/` → documentación del proyecto (fichas, diccionario, Gantt, minutas)
-- `reports/` → informes y presentaciones
+- `data/processed/` → datos limpios y unificados
+- `analysis/` → notebooks de análisis exploratorio
+- `reports/PowerBI/` → tablero de Power BI (todas las versiones)
+- `docs/` → documentación del proyecto
 
-Documentación completa en el Google Drive del equipo. Gestión de tareas en Trello.
-
----
-
-## Contacto
-(opcional)
+La documentación completa (diccionario de datos, bitácora, minutas, Gantt, informe técnico y guion) está en el Google Drive del equipo. La gestión de tareas se hizo en Trello.
