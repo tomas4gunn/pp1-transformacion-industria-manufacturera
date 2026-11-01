@@ -81,7 +81,7 @@ Tablero final en Power BI, presentación en Canva, guion de la exposición, sele
 
 ## Visualizaciones
 
-Tablero de Power BI en `reports/PowerBI/` (versión final `PP1-S2-Visualizaciones_Generales_V8.pbix`):
+Tablero de Power BI en `reports/PowerBI/` (versión final `PP1-S2-Visualizaciones_Generales_V9.pbix`):
 - Portada y preguntas, con navegación por botones
 - P1 · Evolución de la producción
 - P2 · Recuperación por rama
@@ -89,7 +89,9 @@ Tablero de Power BI en `reports/PowerBI/` (versión final `PP1-S2-Visualizacione
 - P3 · Comercio por rubros
 - P3 · Exportaciones, valor y cantidad
 
-Las versiones anteriores (V1 a V7) quedan como respaldo en la misma carpeta y en el Drive del equipo.
+Las versiones anteriores (V1 a V8) quedan como respaldo en la misma carpeta y en el Drive del equipo.
+
+Los gráficos vectoriales usados en la presentación están en `reports/Graficos_Canva/`.
 
 ---
 
@@ -105,6 +107,7 @@ El crecimiento de 2025 no alcanza para hablar de recuperación. Mirando desde 20
 - `data/processed/` → datos limpios y unificados
 - `analysis/` → notebooks de análisis exploratorio
 - `reports/PowerBI/` → tablero de Power BI (todas las versiones)
+- `reports/Graficos_Canva/` → gráficos de la presentación
 - `docs/` → documentación del proyecto
 
 La documentación completa (diccionario de datos, bitácora, minutas, Gantt, informe técnico y guion) está en el Google Drive del equipo. La gestión de tareas se hizo en Trello.
